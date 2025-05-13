@@ -14,37 +14,27 @@
         <template id="Combodo\iTop\Portal\Controller\AbstractController:session_message" _delta="define">itop-portal-new-look-for-3.2-lts/templates/helpers/session_messages/session_message.html.twig</template>
         <template id="Combodo\iTop\Portal\Controller\AbstractController:session_messages" _delta="define">itop-portal-new-look-for-3.2-lts/templates/helpers/session_messages/session_messages.html.twig</template>
         <template id="Combodo\iTop\Portal\Brick\PortalBrick:tile" _delta="define">itop-portal-new-look-for-3.2-lts/templates/bricks/tile.html.twig</template>
-        
          <template id="Combodo\iTop\Portal\Brick\ManageBrick:page" _delta="define">itop-portal-new-look-for-3.2-lts/templates/bricks/manage/layout.html.twig</template>
-          <template id="Combodo\iTop\Portal\Brick\ManageBrick:tile" _delta="define">itop-portal-new-look-for-3.2-lts/templates/bricks/manage/tile-badge.html.twig</template>
-          <template id="Combodo\iTop\Portal\Brick\ManageBrick:tile_badge" _delta="define">itop-portal-new-look-for-3.2-lts/templates/bricks/manage/tile-badge.html.twig</template>
-          <template id="Combodo\iTop\Portal\Brick\ManageBrick:tile_chart" _delta="define">itop-portal-new-look-for-3.2-lts/templates/bricks/manage/tile-chart.html.twig</template>
-          <template id="Combodo\iTop\Portal\Brick\ManageBrick:tile_top_list" _delta="define">itop-portal-new-look-for-3.2-lts/templates/bricks/manage/tile-top-list.html.twig</template>
-          <template id="Combodo\iTop\Portal\Brick\ManageBrick:page_chart" _delta="define">itop-portal-new-look-for-3.2-lts/templates/bricks/manage/layout-chart.html.twig</template>
-          <template id="Combodo\iTop\Portal\Brick\ManageBrick:page_table" _delta="define">itop-portal-new-look-for-3.2-lts/templates/bricks/manage/layout-table.html.twig</template>
-          <template id="Combodo\iTop\Portal\Brick\ManageBrick:mode_chart_bar" _delta="define">itop-portal-new-look-for-3.2-lts/templates/bricks/manage/mode-bar-chart.html.twig</template>
-          <template id="Combodo\iTop\Portal\Brick\ManageBrick:mode_chart_pie" _delta="define">itop-portal-new-look-for-3.2-lts/templates/bricks/manage/mode-pie-chart.html.twig</template>
-        
-        
-          <template id="Combodo\iTop\Portal\Brick\ManageBrick:popup-export-excel" _delta="define">itop-portal-new-look-for-3.2-lts/templates/bricks/manage/popup-export-excel.html.twig</template>
-        
-          <template id="Combodo\iTop\Portal\Brick\AggregatePageBrick:page" _delta="define">itop-portal-new-look-for-3.2-lts/templates/bricks/aggregate-page/layout.html.twig</template>
-          <template id="Combodo\iTop\Portal\Brick\AbstractBrick:page" _delta="define">itop-portal-new-look-for-3.2-lts/templates/bricks/layout.html.twig</template>
-        
-          <template id="Combodo\iTop\Portal\Brick\BrowseBrick:tile" _delta="define">itop-portal-new-look-for-3.2-lts/templates/bricks/tile.html.twig</template>
-          <template id="Combodo\iTop\Portal\Brick\BrowseBrick:page" _delta="define">itop-portal-new-look-for-3.2-lts/templates/bricks/browse/layout.html.twig</template>
-          <template id="Combodo\iTop\Portal\Brick\BrowseBrick:page_list" _delta="define">itop-portal-new-look-for-3.2-lts/templates/bricks/browse/mode_list.html.twig</template>
-          <template id="Combodo\iTop\Portal\Brick\BrowseBrick:page_mosaic" _delta="define">itop-portal-new-look-for-3.2-lts/templates/bricks/browse/mode_mosaic.html.twig</template>
-          <template id="Combodo\iTop\Portal\Brick\BrowseBrick:page_tree" _delta="define">itop-portal-new-look-for-3.2-lts/templates/bricks/browse/mode_tree.html.twig</template>
-        
-          <template id="Combodo\iTop\Portal\Brick\FilterBrick:tile" _delta="define">itop-portal-new-look-for-3.2-lts/templates/bricks/filter/tile.html.twig</template>
-        
-            <template id="Combodo\iTop\Portal\Brick\UserProfileBrick:page" _delta="define">itop-portal-new-look-for-3.2-lts/templates/bricks/user-profile/layout.html.twig</template>
-        
-            <template id="Combodo\iTop\Portal\Controller\DefaultController:page" _delta="define">itop-portal-new-look-for-3.2-lts/templates/home/layout.html.twig</template>
-        
-            <template id="Combodo\iTop\Portal\Controller\ManageBrickController:modal_export_excel" _delta="define">itop-portal-new-look-for-3.2-lts/templates/bricks/manage/popup-export-excel.html.twig</template>
-
+        <template id="Combodo\iTop\Portal\Brick\ManageBrick:tile" _delta="define">itop-portal-new-look-for-3.2-lts/templates/bricks/manage/tile-badge.html.twig</template>
+        <template id="Combodo\iTop\Portal\Brick\ManageBrick:tile_badge" _delta="define">itop-portal-new-look-for-3.2-lts/templates/bricks/manage/tile-badge.html.twig</template>
+        <template id="Combodo\iTop\Portal\Brick\ManageBrick:tile_chart" _delta="define">itop-portal-new-look-for-3.2-lts/templates/bricks/manage/tile-chart.html.twig</template>
+        <template id="Combodo\iTop\Portal\Brick\ManageBrick:tile_top_list" _delta="define">itop-portal-new-look-for-3.2-lts/templates/bricks/manage/tile-top-list.html.twig</template>
+        <template id="Combodo\iTop\Portal\Brick\ManageBrick:page_chart" _delta="define">itop-portal-new-look-for-3.2-lts/templates/bricks/manage/layout-chart.html.twig</template>
+        <template id="Combodo\iTop\Portal\Brick\ManageBrick:page_table" _delta="define">itop-portal-new-look-for-3.2-lts/templates/bricks/manage/layout-table.html.twig</template>
+        <template id="Combodo\iTop\Portal\Brick\ManageBrick:mode_chart_bar" _delta="define">itop-portal-new-look-for-3.2-lts/templates/bricks/manage/mode-bar-chart.html.twig</template>
+        <template id="Combodo\iTop\Portal\Brick\ManageBrick:mode_chart_pie" _delta="define">itop-portal-new-look-for-3.2-lts/templates/bricks/manage/mode-pie-chart.html.twig</template>
+        <template id="Combodo\iTop\Portal\Brick\ManageBrick:popup-export-excel" _delta="define">itop-portal-new-look-for-3.2-lts/templates/bricks/manage/popup-export-excel.html.twig</template>
+        <template id="Combodo\iTop\Portal\Brick\AggregatePageBrick:page" _delta="define">itop-portal-new-look-for-3.2-lts/templates/bricks/aggregate-page/layout.html.twig</template>
+        <template id="Combodo\iTop\Portal\Brick\AbstractBrick:page" _delta="define">itop-portal-new-look-for-3.2-lts/templates/bricks/layout.html.twig</template>
+        <template id="Combodo\iTop\Portal\Brick\BrowseBrick:tile" _delta="define">itop-portal-new-look-for-3.2-lts/templates/bricks/tile.html.twig</template>
+        <template id="Combodo\iTop\Portal\Brick\BrowseBrick:page" _delta="define">itop-portal-new-look-for-3.2-lts/templates/bricks/browse/layout.html.twig</template>
+        <template id="Combodo\iTop\Portal\Brick\BrowseBrick:page_list" _delta="define">itop-portal-new-look-for-3.2-lts/templates/bricks/browse/mode_list.html.twig</template>
+        <template id="Combodo\iTop\Portal\Brick\BrowseBrick:page_mosaic" _delta="define">itop-portal-new-look-for-3.2-lts/templates/bricks/browse/mode_mosaic.html.twig</template>
+        <template id="Combodo\iTop\Portal\Brick\BrowseBrick:page_tree" _delta="define">itop-portal-new-look-for-3.2-lts/templates/bricks/browse/mode_tree.html.twig</template>
+        <template id="Combodo\iTop\Portal\Brick\FilterBrick:tile" _delta="define">itop-portal-new-look-for-3.2-lts/templates/bricks/filter/tile.html.twig</template>
+        <template id="Combodo\iTop\Portal\Brick\UserProfileBrick:page" _delta="define">itop-portal-new-look-for-3.2-lts/templates/bricks/user-profile/layout.html.twig</template>
+        <template id="Combodo\iTop\Portal\Controller\DefaultController:page" _delta="define">itop-portal-new-look-for-3.2-lts/templates/home/layout.html.twig</template>
+        <template id="Combodo\iTop\Portal\Controller\ManageBrickController:modal_export_excel" _delta="define">itop-portal-new-look-for-3.2-lts/templates/bricks/manage/popup-export-excel.html.twig</template>
           <template id="Combodo\iTop\Portal\Controller\ObjectController:page" _delta="define">itop-portal-new-look-for-3.2-lts/templates/bricks/object/layout.html.twig</template>
           <template id="Combodo\iTop\Portal\Controller\ObjectController:modal" _delta="define">itop-portal-new-look-for-3.2-lts/templates/bricks/object/modal.html.twig</template>
           <template id="Combodo\iTop\Portal\Controller\ObjectController:mode_create" _delta="define">itop-portal-new-look-for-3.2-lts/templates/bricks/object/mode_create.html.twig</template>
