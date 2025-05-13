@@ -1,0 +1,10 @@
+{
+  "config": {
+    "autoloader-suffix" : "Portal_New_Look_32"
+  },
+  "autoload": {
+    "psr-4": {
+      "Combodo\\iTop\\Portal\\": "src/"
+    }
+  }
+}

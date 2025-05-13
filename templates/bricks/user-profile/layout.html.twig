@@ -1,0 +1,99 @@
+{% extends template('page', 'Combodo\\iTop\\Portal\\Brick\\AbstractBrick') %}
+
+{% if sTab == "" %}
+    {% set sTab = "user-info" %}
+{% endif %}
+
+{% block pPageBodyClass %}{{ parent() }} page_user-profile_brick{% endblock %}
+
+{% block pMainHeaderTitle %}
+	{{ oBrick.GetTitle()|dict_s }}
+{% endblock %}
+
+{% block pMainContentHolder%}
+	{% if bDemoMode %}
+		<div class="ipb-alert alert alert-warning">
+			<span class="fas fa-info fa-2x" style="margin-right: 10px; vertical-align: sub;"></span>
+			User profile edition is not available in demo mode.
+		</div>
+	{% endif %}
+
+    <div class="form_alerts">
+        {% if sMessage is defined %}
+            <div id="success-message-content" class="ipb-alert alert alert-success" role="alert">{{ sMessage }}</div>
+        {% else %}
+	        <div id="success-message-content" style="display:none;" class="ipb-alert alert alert-success" role="alert"></div>
+        {% endif %}
+
+        {% if sError is defined %}
+            <div id="error-message-content" class="ipb-alert alert alert-error alert-danger" role="alert">{{ sError }}</div>
+        {% else %}
+	        <div id="error-message-content" style="display:none;" class="ipb-alert alert alert-error alert-danger" role="alert"></div>
+        {% endif %}
+    </div>
+
+    <ul class="ipb-tabs nav nav-pills _tabs">
+        {% if aTabsValues is defined and aTabsValues|length > 0 %}
+            <li{% if sTab == "user-info" %} class="active"{% endif %} data-id="user-info" data-label="{{ 'MyAccount:UserInfo:Tab:Title'|dict_s }}">
+                <a href="{{ app.url_generator.generate('p_user_profile_brick', {'sBrickId': oBrick.GetId(), 'sDisplayMode': '_self', 'sTab': "user-info"}) }}"
+                   id="btn_tab_for_user-info">
+                    {{ 'MyAccount:UserInfo:Tab:Title'|dict_s }}
+                </a>
+            </li>
+            {% for aTab in aTabsValues %}
+                <li{% if sTab == aTab.code %} class="active"{% endif %} data-id="{{ aTab.code }}" data-label="{{ aTab.label }}">
+                    <a href="{{ app.url_generator.generate('p_user_profile_brick', {'sBrickId': oBrick.GetId(), 'sDisplayMode': '_self', 'sTab': aTab.code}) }}"
+                       id="btn_tab_for_{{ aTab.code }}">
+                        {{ aTab.label|raw }}
+                    </a>
+                </li>
+            {% endfor %}
+        {% endif %}
+    </ul>
+
+    {% if sTab == "user-info" %}
+	    {% set oContactForm = forms.contact %}
+	    {% set oPreferencesForm = forms.preferences %}
+	    {% set oPasswordForm = forms.password %}
+        {% include template('user_info', 'Combodo\\iTop\\Portal\\Brick\\UserProfileBrick') %}
+    {% else %}
+        <div id="user-profile-wrapper">
+            <div class="row">
+                {% import "itop-portal-base/portal/templates/helpers/macros.twig" as Macro %}
+                {{ Macro.BlockExtension(aPluginFormData, 'html', oBrick) }}
+            </div>
+        </div>
+    {% endif %}
+
+{% endblock %}
+
+{% block pPageReadyScripts %}
+	{{ parent() }}
+    {% import "itop-portal-base/portal/templates/helpers/macros.twig" as Macro %}
+    {{ Macro.BlockExtension(aPluginFormData, 'ready_script', oBrick) }}
+
+	{% if sTab == "" %}
+		{% set sTab = "user-info" %}
+	{% endif %}
+
+	{% if sTab == "user-info" %}
+		{% set oContactForm = forms.contact %}
+		{% set oPreferencesForm = forms.preferences %}
+		{% set oPasswordForm = forms.password %}
+        {% include template('user_info_ready_js', 'Combodo\\iTop\\Portal\\Brick\\UserProfileBrick') %}
+	{% endif %}
+{% endblock %}
+
+{% block pPageLiveScriptHelpers %}
+    {{ parent() }}
+    {% import "itop-portal-base/portal/templates/helpers/macros.twig" as Macro %}
+    {{ Macro.BlockExtension(aPluginFormData, 'script', oBrick) }}
+{% endblock %}
+
+{% block pStyleinline %}
+    {{ parent() }}
+    <style>
+    {% import "itop-portal-base/portal/templates/helpers/macros.twig" as Macro %}
+    {{ Macro.BlockExtension(aPluginFormData, 'css', oBrick) }}
+    </style>
+{% endblock %}

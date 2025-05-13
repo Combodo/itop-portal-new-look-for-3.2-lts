@@ -1,0 +1,27 @@
+{% extends 'itop-portal-new-look-for-3.2-lts/templates/bricks/manage/tile-default.html.twig' %}
+
+{% block pTileExtraContent %}
+<div class="ipb-tile--manage-brick--top-list">
+    <table class="table table-sm">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">{{ 'Brick:Portal:Manage:Group'|dict_s }}</th>
+            <th scope="col">{{ ('Brick:Portal:Manage:fct:' ~ sFct)|dict_s }}</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% set iLineCount = 0 %}
+        {% for aDisplayValue in aDisplayValues %}
+            {% set sURL = aUrls[iLineCount] %}
+            {% set iLineCount = iLineCount + 1 %}
+            <tr>
+                <th scope="row">{{ iLineCount }}</th>
+                <td><a href="{{ sURL }}">{{ aDisplayValue.label_html|raw }}</a></td>
+                <td>{{ aDisplayValue.value }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

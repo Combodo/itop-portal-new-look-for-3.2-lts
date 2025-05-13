@@ -1,0 +1,24 @@
+{% set name = 'filter' %}
+
+{% extends 'itop-portal-new-look-for-3.2-lts/templates/bricks/tile.html.twig' %}
+
+{% if brick.GetTargetBrickClass == 'Combodo\\iTop\\Portal\\Brick\\BrowseBrick' %}
+    {% set sTargetBrickUrl = app['url_generator'].generate('p_browse_brick_mode', {'sBrickId': brick.GetTargetBrickId, 'sBrowseMode': brick.GetTargetBrickTab}) %}
+{% elseif brick.GetTargetBrickClass == 'Combodo\\iTop\\Portal\\Brick\\ManageBrick' %}
+    {% set sTargetBrickUrl = app['url_generator'].generate('p_manage_brick', {'sBrickId': brick.GetTargetBrickId, 'sGroupingTab': brick.GetTargetBrickTab}) %}
+{% endif %}
+
+{% block pTileExtraContent %}
+    <div class="ipb-tile--filter-brick--filter-box">
+        <form method="post" action="{{ sTargetBrickUrl }}" class="form-inline">
+            <div class="form-group">
+                <input type="text" class="form-control" name="sSearchValue" placeholder="{{ brick.GetSearchPlaceholderValue|dict_s }}" />
+            </div>
+            <input type="hidden" name="sDataLoading" value="{{ constant('\\Combodo\\iTop\\Portal\\Brick\\AbstractBrick::ENUM_DATA_LOADING_LAZY') }}" />
+            <button type="submit" class="btn btn-primary">
+                <span class="{{ brick.GetSearchSubmitClass }}"></span>
+                {{ brick.GetSearchSubmitLabel|dict_s }}
+            </button>
+        </form>
+    </div>
+{% endblock %}

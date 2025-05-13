@@ -1,0 +1,30 @@
+{# itop-portal-base-base/portal/templates/home/layout.html.twig #}
+{# Home layout #}
+{% extends app['combodo.portal.instance.conf'].properties.templates.layout %}
+
+{% block pPageBodyClass %}ipb-home home{% endblock %}
+
+{% block pMainWrapper %}
+{% set iCurrentTileIndex = 0 %}
+<div class="ipb-page--main-wrapper">
+
+    {# session messages #}
+    <section class="ipb-page--session-messages">
+            {% include template('session_messages') %}
+    </section>
+
+    {# tiles wrapper #}
+    <section class="ipb-page--tiles-flex-wrapper">
+        {% for brick in app['brick_collection'].home_ordering %}
+            {% if brick.GetVisibleHome %}
+                {% if aTilesRendering[brick.GetId] is defined %}
+                    {{ aTilesRendering[brick.GetId]|raw }}
+                {% else %}
+                    {% include '' ~ brick.GetTileTemplatePath with {brick: brick} %}
+                {% endif %}
+            {% endif %}
+        {% endfor %}
+    </section>
+
+</div>
+{% endblock %}

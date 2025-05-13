@@ -1,0 +1,24 @@
+{% extends template('page', 'Combodo\\iTop\\Portal\\Brick\\AbstractBrick') %}
+
+{% block pMainHeaderTitle %}{{ oBrick.GetTitle()|dict_s }}{% endblock %}
+{% block pMainHeaderTitleAdditionalPart %}{% if iCount >= 0 %}{{ iCount }}{% endif %}{% endblock %}
+
+{% block pMainHeaderActions %}
+    {% if oBrick.GetAvailablesDisplayModes|length > 1 %}
+		<div class="btn-group">
+            {% for sDisplay in oBrick.GetAvailablesDisplayModes %}
+				<a href="{{ app.url_generator.generate('p_manage_brick_display_as', {'sBrickId': sBrickId, 'sDisplayMode': sDisplay}) }}{% if app['combodo.portal.instance.routes'][oBrick.GetRouteName]['hash'] is defined %}#{{ app['combodo.portal.instance.routes'][oBrick.GetRouteName]['hash'] }}{% endif %}"
+				   id="btn_tab_for_{{ sDisplay }}"
+				   class="btn btn-sm btn-default {% if sDisplay == sDisplayMode %}active{% endif %}"
+                >
+                    {{ ('Brick:Portal:Manage:DisplayMode:' ~ sDisplay)|dict_s }}
+				</a>
+            {% endfor %}
+		</div>
+    {% endif %}
+{% endblock %}
+
+{% block pPageReadyScripts %}
+    {{ parent() }}
+    {% include template('tagset_clic_handler_js') %}
+{% endblock %}

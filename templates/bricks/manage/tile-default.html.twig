@@ -1,0 +1,14 @@
+{% set name = 'manage' %}
+
+{% extends 'itop-portal-new-look-for-3.2-lts/templates/bricks/tile.html.twig' %}
+
+{% block pTileTitle %}
+    <div class="ipb-tile--title">
+        <span>{{ oBrick.GetTitle()|dict_s }}</span><span><span>{{ iCount }}</span>
+            {% if sIconURL is defined %}
+                <img id="img{{ id }}" src="{{ sIconURL }}" class="ipb-tile--decoration--icon class-icon" alt="Class Icon">
+            {% endif %}
+        </span>
+    </div>
+{% endblock %}
+

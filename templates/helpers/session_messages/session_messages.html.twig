@@ -1,0 +1,5 @@
+<div id="session-messages">
+	{% for aSessionMessage in app['session_message_helper'] %}
+        {% include template('session_message') with {aSessionMessage: aSessionMessage} %}
+	{% endfor %}
+</div>

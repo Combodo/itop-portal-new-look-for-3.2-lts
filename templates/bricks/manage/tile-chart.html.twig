@@ -1,0 +1,7 @@
+{% extends 'itop-portal-new-look-for-3.2-lts/templates/bricks/manage/tile-default.html.twig' %}
+
+{% block pTileExtraContent %}
+    <div class="ipb-tile--manage-brick--chart">
+        {% include template(oBrick.GetTileMode, 'Combodo\\iTop\\Portal\\Brick\\ManageBrick', oBrick) with {'oBrick': oBrick, 'aColumns': aColumns, 'aNames': aNames, 'aUrls': aUrls, 'aDisplayValues': aDisplayValues} %}
+    </div>
+{% endblock %}

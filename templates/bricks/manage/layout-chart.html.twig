@@ -1,0 +1,13 @@
+{% extends template('page', 'Combodo\\iTop\\Portal\\Brick\\ManageBrick', oBrick) %}
+
+{% block pPageBodyClass %}{{ parent() }} page_manage_brick{% endblock %}
+
+
+{% block pMainContentHolder %}
+    <div class="panel panel-default">
+        <div class="panel-body">
+            {% include template(sDisplayMode, 'Combodo\\iTop\\Portal\\Brick\\ManageBrick', oBrick) with {'oBrick': oBrick, 'aColumns': aColumns, 'aNames': aNames, 'aUrls': aUrls, 'aDisplayValues': aDisplayValues} %}
+        </div>
+    </div>
+{% endblock %}
+

@@ -1,0 +1,924 @@
+/*!
+ * Copyright (C) 2013-2024 Combodo SAS
+ *
+ * This file is part of iTop.
+ *
+ * iTop is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * iTop is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Affero General Public License for more details.
+ *
+ * You should have received a copy of the GNU Affero General Public License
+ */
+@import 'common/main.scss';
+@import '../../../../itop-portal-new-look-for-3.2-lts/public/css/variables.scss';
+@import "../../../../itop-portal-new-look-for-3.2-lts/public/css/utils/all";
+@import '../node_modules/ckeditor5-itop-build/build/styles/compiled-theme';
+
+/*!
+ * Combodo portal template v1.0.0
+*/
+
+/*******************/
+/* Global settings */
+/*******************/
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+}
+footer{
+	margin: 5em 1em;
+	text-align: center;
+}
+
+/* Environment banner */
+#envbanner{
+	position: relative;
+	z-index: 10;
+	padding: 5px 15px;
+	text-align: center;
+}
+#envbanner > button{
+	margin-left: 5px;
+	color: #000;
+}
+
+/* Topbar */
+#topbar .navbar-header{
+	position: relative;
+	z-index: 2;
+}
+#topbar .navbar-collapse{
+	position: relative;
+	z-index: 1;
+	overflow-y: auto;
+}
+#topbar .navbar-collapse > .navbar-nav{
+	padding-top: 30px;
+}
+#topbar .navbar-brand > img{
+	max-height: 100%;
+}
+#topbar .user_infos{
+	text-decoration: none;
+}
+#topbar .user_photo{
+	position: absolute;
+	display: block;
+	top: 5px;
+	left: 10px;
+	width: 65px;
+	height: 65px;
+	background-size: 100%;
+	background-position: center center;
+	background-color: #585653;
+	border: 2px solid $white;
+	border-radius: 100%;
+	box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.4);
+}
+#topbar .user_fullname{
+	display: inline-block;
+	position: absolute;
+	padding-left: 85px;
+	max-width: 55%;
+	/*color: $white;*/
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow-x: hidden;
+}
+/* Sidebar */
+@media (min-width: 768px){
+
+	/* Main content */
+	#main-wrapper{
+    flex-grow: 1;
+    overflow: auto;
+	}
+}
+@media (min-width: 992px){
+
+}
+
+
+/* Overlays*/
+.global_overlay{
+	z-index: 9999;
+	display: none;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	background-color: black;
+	opacity: 0.5;
+}
+#page_overlay .overlay_content{
+	margin-top: 20em;
+	width: 100%;
+	color: white;
+}
+.overlay_content{
+	text-align: center;
+}
+.content_loader{
+	text-align: center;
+}
+.content_loader .icon{
+	margin-bottom: 0.3em;
+	/*width: 52px;*/
+	height: 38px; /* 50px; *//* Hack to make loader circle perfectly */
+	font-size: 3em; /* 4em; */
+	animation: spin 1.2s linear infinite;
+	-webkit-animation: spin 1.2s linear infinite;
+	-moz-animation: spin 1.2s linear infinite;
+	-ms-animation: spin 1.2s linear infinite;
+}
+.content_loader .message{
+	font-size: 1.5em; /* 2em; */
+}
+
+.datatables_overlay{
+	padding: 5% 0px !important;
+	background-color: white;
+}
+
+/******************/
+/* Global classes */
+/******************/
+.vertical-center {
+	/* Make it a flex container */
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+
+	/* Align the bootstrap's container vertically */
+	-webkit-box-align : center;
+	-webkit-align-items : center;
+	-moz-box-align : center;
+	-ms-flex-align : center;
+	align-items : center;
+
+	/* Also 'margin: 0 auto' doesn't have any effect on flex items in such web browsers
+	hence the bootstrap's container won't be aligned to the center anymore.
+  
+	Therefore, we should use the following declarations to get it centered again */
+	-webkit-box-pack : center;
+	-moz-box-pack : center;
+	-ms-flex-pack : center;
+	-webkit-justify-content : center;
+	justify-content : center;
+}
+.text_decoration{
+	vertical-align: baseline;
+	margin-right: 8px;
+}
+
+/*********************/
+/* Global animations */
+/*********************/
+/* Spin */
+@keyframes spin{
+	100% {
+		transform: rotate(360deg);
+	}
+}
+@-webkit-keyframes spin{
+	100% {
+		-webkit-transform: rotate(360deg);
+	}
+}
+@-moz-keyframes spin{
+	100% {
+		-moz-transform: rotate(360deg);
+	}
+}
+@-ms-keyframes spin{
+	100% {
+		-ms-transform: rotate(360deg);
+	}
+}
+
+/*********************/
+/* BS theme override */
+/*********************/
+.list-group.tree{
+	margin-top: 11px;
+	margin-bottom: -11px;
+}
+.list-group.tree .list-group-item{
+	padding-right: 0px; /* To align all actions on the right without indent */
+}
+
+/******************/
+/* Modal settings */
+/******************/
+#modal-for-alert{
+	z-index: 9999; /* Should always be on top to display errors messages */
+}
+.modal-content .content_loader{
+	margin: 7em 0em;
+	text-align: center;
+}
+
+/**************************/
+/* MagnificPopup settings */
+/**************************/
+.mfp-bg{
+	z-index: 1200;
+}
+.mfp-wrap{
+	z-index: 1210;
+}
+.mfp-img{
+	cursor: pointer;
+	cursor: zoom-out;
+}
+
+/********************/
+/* Typeahead setting */
+/********************/
+.twitter-typeahead .tt-menu{
+	max-height: 200px;
+	overflow-y: auto;
+}
+@media (min-width: 768px){
+	.twitter-typeahead .tt-menu{
+		max-height: 300px;
+	}
+}
+
+.twitter-typeahead .tt-dataset > .content_loader{
+	margin: 10px 0px;
+	text-align: center;
+	font-size: 0.6em;
+}
+.twitter-typeahead .tt-dataset > .content_loader .icon{
+	height: 25px;
+}
+.twitter-typeahead .tt-dataset .no_result{
+	text-align: center;
+	font-style: italic;
+}
+
+/*****************/
+/* Home settings */
+/*****************/
+.home #main-wrapper{
+	padding-top: 15px;
+}
+
+/********************/
+/* Modules settings */
+/********************/
+
+#main-header{
+	//text-align: center;
+}
+#main-header-title{
+	margin-bottom: 15px;
+	.subtitle{
+		display: block;
+		margin-top: 8px;
+		margin-bottom: 20px;
+	}
+}
+
+#main-header-actions{
+	margin-bottom: 15px;
+}
+
+@media (min-width: 768px) {
+	#main-header:after{
+		clear: both;
+	}
+	#main-header-title{
+		float: left;
+		margin-bottom: 0px;
+		min-height: 6em;
+		text-align: left;
+	}
+	#main-header-actions{
+		float: right;
+		margin-bottom: 0px;
+	}
+}
+
+.dataTables_wrapper{
+	padding: 10px 10px;
+}
+.dataTable.table td img{
+	max-width: 100%;
+	height: initial !important;
+}
+#brick_content_toolbar{
+	/* margin: 10px 0px 6px 0px; */
+	padding: 10px;
+}
+#brick_content_toolbar > div label{
+	font-weight: normal;
+	white-space: nowrap;
+	text-align: left;
+}
+#brick_content_toolbar > div label input{
+	margin-left: 0.5em;
+	display: inline-block;
+	width: 130px;
+}
+
+/***********************/
+/* Brick communication */
+/***********************/
+/* Home tile */
+.home .tile.tile_communication{
+	padding: 20px;
+	background-color: #EDEDED;
+	border: none;
+	font-weight: initial;
+}
+.home .tile_communication .carousel{
+	margin-bottom: 0px;
+	width: 100%;
+	height: 200px;
+}
+
+/**********************/
+/* Brick user profile */
+/**********************/
+#user-profile-wrapper .user_profile_picture .content_loader{
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	padding-top: 4em;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	color: white;
+	background-color: black;
+	opacity: 0.5;
+}
+#user-profile-wrapper .user_profile_picture .preview{
+	display: inline-block;
+	position: relative;
+	max-width: 175px;
+	max-height: 175px;
+	overflow: hidden;
+}
+#user-profile-wrapper .user_profile_picture .preview img{
+	max-width: 100%;
+	max-height: 100%;
+}
+#user-profile-wrapper .user_profile_picture .actions{
+	display: inline-block;
+	vertical-align: top; /*middle;*/
+	margin-left: 5px;
+}
+#user-profile-wrapper .user_profile_picture .actions .btn{
+	display: block;
+	position: relative;
+	margin-bottom: 10px;
+}
+#user-profile-wrapper .user_profile_picture .actions .btn:last-child{
+	margin-bottom: 0px;
+}
+#user-profile-wrapper .user_profile_picture .actions .btn.btn_edit{
+	overflow: hidden;
+}
+#user-profile-wrapper .user_profile_picture .actions .btn.btn_edit input{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	cursor: pointer;
+}
+
+/****************/
+/* Brick browse */
+/****************/
+/* - Tree mode  */
+/****************/
+#brick_content_tree{
+	position: relative;
+	margin-top: 0px;
+}
+
+#brick_content_tree .list-group-item{
+	padding-top: 0px;
+}
+#brick_content_tree .list-group-item > .tree-item-wrapper{
+	display: block;
+	padding-top: 10px;
+	color: inherit;
+	text-decoration: inherit;
+	cursor: pointer;
+}
+
+.list-group-item > .list-group-item-actions{
+	/*display: none; Displaying actions only when hovering was not unanimous in the team */
+	position: absolute;
+	top: 10px;
+	right: 10px;
+}
+.list-group-item .keep-spinning{
+	animation: spin 1s linear infinite;
+	-webkit-animation: spin 1s linear infinite;
+	-moz-animation: spin 1s linear infinite;
+	-ms-animation: spin 1s linear infinite;
+}
+.list-group.tree .list-group-item .list-group-item-description{
+	display: block;
+	margin-top: 3px;
+}
+
+/* Secondary actions */
+.list-group-item-actions .group-actions-wrapper,
+.mosaic-group-item-actions .group-actions-wrapper,
+table .group-actions-wrapper{
+	text-align: center;
+}
+table .group-actions{
+	position: relative;
+}
+.list-group-item-actions a.glyphicon-menu-hamburger,
+.mosaic-group-item-actions a.glyphicon-menu-hamburger,
+table .group-actions a.glyphicon-menu-hamburger{
+	cursor: pointer;
+	text-decoration: none;
+}
+
+#brick_content_empty{
+	display: none;
+	padding: 40px;
+	font-size: 1.3em;
+	font-style: italic;
+}
+
+/* Loader */
+#brick_tree_overlay,
+#brick_mosaic_overlay{
+	display: none;
+	padding: 8% 0px;
+	border-radius: 0px 0px 4px 4px;
+	font-size: 1em;
+}
+
+
+/****************************************************************/
+/* - Mosaic mode                                                */
+/*                                                              */
+/* Note: Some of the CSS is factorised in the "Tree mode" part  */
+/*                                                              */
+/* Note: .mosaic-item-layout-x classes are for different        */
+/*   presentation modes. Like in binary, add the values to know */
+/*   which class to use.                                        */
+/*   - 1 is for name                                            */
+/*   - 2 is for description                                     */
+/*   - 4 is for image                                           */
+/*   eg. .mosaic-item-layout-5 when just name and image         */
+/****************************************************************/
+#brick_content_mosaic{
+	position: relative;
+	padding: 10px 10px 1px 10px;
+}
+/* Breadcrumb */
+#mosaic-breadcrumb{
+	margin-bottom: 5px;
+	padding-left: 0px;
+	font-size: 12px;
+	white-space: nowrap;
+	overflow-x: hidden;
+	text-overflow: ellipsis;
+}
+
+.mosaic-group{
+	display: none;
+}
+/* Only the first level is showed by default */
+.mosaic-group:first-of-type{
+	display: block;
+}
+
+
+/****************/
+/* - List mode  */
+/****************/
+
+/****************/
+/* Filter brick */
+/****************/
+.tile.tile-filter-brick a.tile_decoration {
+	cursor: default;
+}
+
+.tile.tile-filter-brick .tile_filterbox .form-group:first-child{
+	width: 100%;
+}
+.tile.tile-filter-brick .tile_filterbox input[type="text"]{
+	width: 100%;
+}
+@media (max-width: 768px){
+	.tile.tile-filter-brick .tile_filterbox .form-group:first-child{
+		margin-bottom: 5px;
+	}
+}
+@media (min-width: 768px){
+	.tile.tile-filter-brick .tile_filterbox form{
+		display: table;
+	}
+	.tile.tile-filter-brick .tile_filterbox .form-group:first-child{
+		display: table-cell;
+	}
+	.tile.tile-filter-brick .tile_filterbox button[type="submit"]{
+		margin-left: 5px;
+	}
+}
+@media (min-width: 992px)
+{
+	.tile.tile-filter-brick .tile_filterbox .form-group:first-child{
+		display: table-cell;
+	}
+}
+
+/*********/
+/* Forms */
+/*********/
+/* - Ensure HTML contents are displayed like in CKEditor */
+.ipb-is-html-content {
+  @extend .ck-content;
+}
+
+
+/* Note: We don't put the .form_field selector as it must work for read-only */
+.form-control-static img{
+	max-width: 100% !important;
+	height: initial !important;
+}
+/* ExternalKey */
+.selectobject .input-group-addon{
+	cursor: pointer;
+}
+/* InlineImage */
+.inline-image{
+	cursor: pointer;
+	cursor: zoom-in;
+}
+/* CaseLog field */
+
+/* collapsable sections*/
+.form_linkedset_toggler, .form_upload_toggler {
+
+	&, &:hover, &:focus {
+		text-decoration: none;
+		color: inherit;
+	}
+
+	& > .text {
+		margin-left: 0.4em;
+	}
+	&  > .text:before {
+		content: "(";
+	}
+	& > .text:after {
+		content: ")";
+	}
+	& > .glyphicon{
+		margin-left: 0.5em;
+		font-size: 0.85em;
+		color: $combodo-orange;
+		transition: transform 0.2s linear;
+	}
+	& > .glyphicon.collapsed{
+		transform: rotateZ(-90deg);
+	}
+}
+
+/* - DataTables : Loader */
+.form_linkedset_wrapper .datatables_overlay{
+	padding: 8px !important;
+}
+.form_linkedset_wrapper .overlay_content{
+	font-size: 0.6em;
+}
+.form_linkedset_wrapper .content_loader{
+	margin: 0px;
+}
+.form_linkedset_wrapper .content_loader .icon{
+	height: 23px;
+}
+/* - DataTables : Fit the table in the form */
+.form_linkedset_wrapper .dataTables_wrapper{
+	margin-bottom: 5px;
+	padding: 0px;
+}
+/* FileUpload */
+.attachments_container {
+	.attachments-list {
+		thead > tr > th {
+			text-align: center;
+		}
+
+		tbody > tr > td {
+			padding: 0.5rem 8px;
+			text-align: left;
+			vertical-align: middle;
+
+			&[role="icon"] {
+				text-align: center;
+
+				img{
+					max-height: 32px;
+				}
+			}
+			&[role="formatted-size"] {
+				text-align: right;
+			}
+			&[role="delete"] {
+				text-align: center;
+			}
+		}
+	}
+}
+.attachment-tooltip {
+		max-width: 100%;
+		max-height: 100%;
+}
+
+.upload_container input{
+	display: inline;
+}
+.upload_container .loader{
+	visibility: hidden;
+	margin-left: 7px;
+	font-size: 1.2em;
+	animation: spin 1.0s linear infinite;
+	-webkit-animation: spin 1.0s linear infinite;
+	-moz-animation: spin 1.0s linear infinite;
+	-ms-animation: spin 1.0s linear infinite;
+}
+#drag_overlay{
+	display: block;
+	top: inherit;
+	bottom: 0px;
+	height: 0px;
+}
+#drag_overlay .overlay_content{
+	margin-top: 5em;
+	width: 100%;
+	color: white;
+}
+#drag_overlay .overlay_content .icon{
+	font-size: 3em;
+}
+#drag_overlay .overlay_content .message{
+	font-size: 1.5em;
+}
+/* Attachments drag & drop zone, only for none mobile devices */
+@media (min-width: 768px){
+	#drag_overlay.drag_in{
+		animation: show-drop-zone 0.3s ease-out forwards;
+		-webkit-animation: show-drop-zone 0.3s ease-out forwards;
+		-moz-animation: show-drop-zone 0.3s ease-out forwards;
+		-ms-animation: show-drop-zone 0.3s ease-out forwards;
+	}
+	#drag_overlay.drag_out{
+		animation: hide-drop-zone 0.3s ease-out forwards;
+		-webkit-animation: hide-drop-zone 0.3s ease-out forwards;
+		-moz-animation: hide-drop-zone 0.3s ease-out forwards;
+		-ms-animation: hide-drop-zone 0.3s ease-out forwards;
+	}
+	@keyframes show-drop-zone{
+		100% {
+			height: 20%;
+		}
+	}
+	@-webkit-keyframes show-drop-zone{
+		100% {
+			height: 20%;
+		}
+	}
+	@-moz-keyframes show-drop-zone{
+		100% {
+			height: 20%;
+		}
+	}
+	@-ms-keyframes show-drop-zone{
+		100% {
+			height: 20%;
+		}
+	}
+	@keyframes hide-drop-zone{
+		0% {
+			height: 20%;
+		}
+		100% {
+			height: 0%;
+		}
+	}
+	@-webkit-keyframes hide-drop-zone{
+		0% {
+			height: 20%;
+		}
+		100% {
+			height: 0%;
+		}
+	}
+	@-moz-keyframes hide-drop-zone{
+		0% {
+			height: 20%;
+		}
+		100% {
+			height: 0%;
+		}
+	}
+	@-ms-keyframes hide-drop-zone{
+		0% {
+			height: 20%;
+		}
+		100% {
+			height: 0%;
+		}
+	}
+}
+/* BlobField */
+.form_fields .file_open_link{
+	margin-left: 10px;
+}
+
+.form_buttons{
+	padding-top: 20px;
+	text-align: center;
+}
+.form_buttons .form_btn_misc {
+	margin-bottom: 20px;
+}
+.form_buttons .form_btn_transitions{
+	margin-bottom: 20px;
+}
+.form_buttons .btn .glyphicon{
+	margin-right: 0.5em;
+}
+.form_btn_regular.sticky{
+	display: none;
+}
+@media (min-width: 768px){
+	.form_buttons .form_btn_misc{
+		float: left !important;
+	}
+	.form_buttons .form_btn_transitions{
+		float: right !important;
+		margin-left: 3px;
+	}
+	.form_buttons .form_btn_regular{
+		text-align: right;
+	}
+	.form_buttons .form_btn_regular .btn{
+		width: inherit;
+	}
+	/* Making regular button sticky */
+	.form_btn_regular.sticky{
+		display: block;
+		position: fixed;
+		bottom: 5em;
+		right: -2px; /* TODO : SASS this to col-xs-12 padding */
+		padding: 15px;
+		background-color: $white;
+		border: 1px solid $gray-lighter;
+		border-radius: $border-radius-base;
+		transition: right 0.3s;
+	}
+	.form_btn_regular.sticky.closed{
+		right: -75px;
+	}
+	.form_btn_regular.sticky button{
+		display: block;
+	}
+	.form_btn_regular.sticky button:first-child{
+		margin-bottom: 4px;
+	}
+}
+
+/* CKEditor: Variables overload */
+.ck {
+  --ck-color-focus-border: #{$brand-primary};
+  --ck-spacing-small: 4px;
+  --ck-ui-component-min-height: 18px;
+  --ck-icon-size: 18px;
+}
+/* CKEditor: Adding BS error feedback */
+.form_field .cke{
+	border: 1px solid $gray-lighter;
+}
+.form_field.has-error .ck-editor{
+	border: 1px solid $state-danger-text;
+	border-radius: $border-radius-base;
+	box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+}
+
+/* DataTables : Selection inputs */
+.dataTable.table th span.row_input,
+.dataTable.table td span.row_input{
+	display: inline-block;
+	width: 100%;
+	text-align: center;
+}
+/* Wiki text (hyperlinks) */
+.wiki_broken_link {
+	text-decoration: line-through;
+}
+
+/* Tippy: Handle multi-line content */
+.tippy-content {
+	white-space: pre-line;
+}
+
+@media print {
+  /* Prevent URLs from being displayed */
+  a[href], img[src] {
+    &::after {
+      content: none !important;
+    }
+  }
+
+  /* Force modals to be displayed one after another instead of stacked */
+  .modal {
+    &.in {
+      position: relative;
+      top: unset;
+      z-index: unset;
+      overflow-y: unset;
+    }
+
+  }
+
+  #drag_overlay {
+    display: none;
+  }
+}
+
+/**********************************************************/
+/* Shameful area (things that should be refactored soon) */
+/**********************************************************/
+
+/* Hide attributes label in link set edition, will be fixed during attributes refactoring */
+.form_linkedset_wrapper .form_field_label {
+  display: none;
+}
+
+.form_linkedset_wrapper .form_field_control {
+  width: 100%!important;
+}
+
+/* Add mandatory field column label */
+.form_linkedset_wrapper .dataTables_scrollHead th.mandatory:after {
+  content: "*";
+  position: relative;
+  left: 3px;
+  color: $combodo-orange;
+  font-size: 0.9em;
+}
+
+/* Add style for invalid input */
+.form_linkedset_wrapper input:invalid {
+  border-color: $state-danger-border;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+.form_linkedset_wrapper input:invalid:focus {
+  border-color: darken($state-danger-border, 10);
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px lighten($state-danger-border, 10);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px lighten($state-danger-border, 10);
+}
+
+
+/*****************************************************/
+/* Redefine highlightjs variables */
+/******************************************************/
+
+$common-vendors-highlightjs--padding: $ipb-vendors-highlightjs--padding;
+$common-vendors-highlightjs--box-shadow: $ipb-vendors-highlightjs--box-shadow;
+$common-vendors-highlightjs--border-radius: $ipb-vendors-highlightjs--border-radius;
+$common-vendors-highlightjs--code--padding-x: $ipb-vendors-highlightjs--code--padding-x;
+$common-vendors-highlightjs--code--padding-y: $ipb-vendors-highlightjs--code--padding-y;
+
+$common-vendors-highlightjs--background-color: $ipb-vendors-highlightjs--background-color;
+$common-vendors-highlightjs--color: $ipb-vendors-highlightjs--color;
+$common-vendors-highlightjs--keyword--color: $ipb-vendors-highlightjs--keyword--color;
+$common-vendors-highlightjs--number--color: $ipb-vendors-highlightjs--number--color;
+$common-vendors-highlightjs--attribute--color: $ipb-vendors-highlightjs--attribute--color;
+$common-vendors-highlightjs--regexp--color: $ipb-vendors-highlightjs--regexp--color;
+$common-vendors-highlightjs--meta--color: $ipb-vendors-highlightjs--meta--color;
+$common-vendors-highlightjs--tag--color: $ipb-vendors-highlightjs--tag--color;
+$common-vendors-highlightjs--string--color: $ipb-vendors-highlightjs--string--color;
+$common-vendors-highlightjs--comment--color: $ipb-vendors-highlightjs--comment--color;
+$common-vendors-highlightjs--selector-class--color: $ipb-vendors-highlightjs--selector-class--color;
+$common-vendors-highlightjs--code--color: $ipb-vendors-highlightjs--code--color;
