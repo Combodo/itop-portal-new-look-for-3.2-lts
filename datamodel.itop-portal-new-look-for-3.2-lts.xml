@@ -46,7 +46,6 @@
           <template id="Combodo\iTop\Portal\Controller\ObjectController:mode_apply_stimulus" _delta="define">itop-portal-new-look-for-3.2-lts/templates/bricks/object/mode_apply_stimulus.html.twig</template>
           <template id="Combodo\iTop\Portal\Controller\ObjectController:mode_loader" _delta="define">itop-portal-new-look-for-3.2-lts/templates/bricks/object/mode_loader.html.twig</template>
           <template id="Combodo\iTop\Portal\Controller\ObjectController:plugins_buttons" _delta="define">itop-portal-new-look-for-3.2-lts/templates/bricks/object/plugins_buttons.html.twig</template>
-          <template id="Combodo\iTop\Portal\Brick\CommunicationBrick:tile" _delta="define">itop-portal-new-look-for-3.2-lts/templates/bricks/communication/tile.html.twig</template>
     </templates>
       <themes>
           <theme id="portal" _delta="define">itop-portal-new-look-for-3.2-lts/public/css/portal.scss</theme>
