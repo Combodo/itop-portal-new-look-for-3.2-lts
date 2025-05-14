@@ -48,7 +48,7 @@
     </templates>
       <themes>
           <theme id="portal" _delta="define">itop-portal-new-look-for-3.2-lts/public/css/portal.scss</theme>
-          <theme id="bootstrap-theme-combodo" _delta="define">itop-portal-new-look-for-3.2-lts/public/css/bootstrap-theme-combodo.scss</theme>
+          <theme id="bootstrap" _delta="define">itop-portal-new-look-for-3.2-lts/public/css/bootstrap-theme-combodo.scss</theme>
           <theme id="main" _delta="define">itop-portal-new-look-for-3.2-lts/public/css/main.scss</theme>
       </themes>
   </properties>
