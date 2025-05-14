@@ -168,5 +168,5 @@
 {# navigation menu custom element #}
 <nav id="sidebar" is="ipb-navigation-menu"
      {% if user_preferences['portal.navigation_menu.expanded'] is defined %}data-expanded-state="{{ user_preferences['portal.navigation_menu.expanded'] }}"{% endif %}
-        {% if ui_settings is defined %}data-position="{{ ui_settings['navigation_menu'] }}"{% endif %}>
+        {% if look_module_parameters.menu_display_style is defined %}data-position="{{ look_module_parameters.menu_display_style }}"{% endif %}>
 </nav>

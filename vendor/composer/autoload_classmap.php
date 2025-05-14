@@ -8,6 +8,7 @@ $baseDir = dirname($vendorDir);
 return array(
     'Combodo\\iTop\\Portal\\Controller\\PreferencesController' => $baseDir . '/src/Controller/PreferencesController.php',
     'Combodo\\iTop\\Portal\\Twig\\AppIconUrlGlobal' => $baseDir . '/src/Twig/AppIconUrlGlobal.php',
+    'Combodo\\iTop\\Portal\\Twig\\ConfigurationGlobal' => $baseDir . '/src/Twig/ConfigurationGlobal.php',
     'Combodo\\iTop\\Portal\\Twig\\PreferencesGlobal' => $baseDir . '/src/Twig/PreferencesGlobal.php',
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
 );

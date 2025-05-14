@@ -54,4 +54,11 @@
   </properties>
   </module_design>
 </module_designs>
+<module_parameters>
+    <parameters id="itop-portal-new-look-for-3.2-lts" _delta="define">
+      <menu_display_style type="hash">
+          <itop-portal>vertical</itop-portal>
+      </menu_display_style>
+    </parameters>
+</module_parameters>
 </itop_design>

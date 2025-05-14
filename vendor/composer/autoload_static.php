@@ -23,6 +23,7 @@ class ComposerStaticInitPortal_New_Look_32
     public static $classMap = array (
         'Combodo\\iTop\\Portal\\Controller\\PreferencesController' => __DIR__ . '/../..' . '/src/Controller/PreferencesController.php',
         'Combodo\\iTop\\Portal\\Twig\\AppIconUrlGlobal' => __DIR__ . '/../..' . '/src/Twig/AppIconUrlGlobal.php',
+        'Combodo\\iTop\\Portal\\Twig\\ConfigurationGlobal' => __DIR__ . '/../..' . '/src/Twig/ConfigurationGlobal.php',
         'Combodo\\iTop\\Portal\\Twig\\PreferencesGlobal' => __DIR__ . '/../..' . '/src/Twig/PreferencesGlobal.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
     );

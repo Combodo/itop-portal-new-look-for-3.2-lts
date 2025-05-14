@@ -15,3 +15,9 @@ ItopExtensionsExtraRoutes::AddControllersClasses(
 	'Combodo\iTop\Portal\Twig\AppIconUrlGlobal'
 	)
 );
+
+ItopExtensionsExtraRoutes::AddControllersClasses(
+	array(
+	'Combodo\iTop\Portal\Twig\ConfigurationGlobal'
+	)
+);
