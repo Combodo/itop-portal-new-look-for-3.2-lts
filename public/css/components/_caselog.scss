@@ -54,18 +54,18 @@ $messaging-block-medallion-size: 40px !default;
 $messaging-block-entries-margin-x: 60px !default;
 
 
-.ipb-caselog-thread {
+.caselog-thread {
   position: relative;
   border-top: $ipb-caselog-thread--border-top;
 }
-.ipb-caselog-thread--header{
+.caselog-thread--header{
   padding: $ipb-caselog-thread--header--padding;
   border-bottom: none;
 
   @extend %common-font-size-100;
 
 }
-.ipb-caselog-thread--header-toggler{
+.caselog-thread--header-toggler{
   cursor: pointer;
   text-decoration: none;
 
@@ -83,7 +83,7 @@ $messaging-block-entries-margin-x: 60px !default;
   }
 }
 
-.ipb-caselog-thread--header-info{
+.caselog-thread--header-info{
   > span{
     margin-left: $ipb-caselog-thread--header-info--span--margin-left;
 
@@ -97,11 +97,11 @@ $messaging-block-entries-margin-x: 60px !default;
   }
 }
 
-.ipb-caselog-thread--content{
+.caselog-thread--content{
   padding: $ipb-caselog-thread--content--padding;
 }
 
-.ipb-caselog-thread--date{
+.caselog-thread--date{
   margin-bottom: $ipb-caselog-thread--date--margin-bottom;
   text-align: center;
 
@@ -111,9 +111,9 @@ $messaging-block-entries-margin-x: 60px !default;
   }
 }
 
-.ipb-caselog-thread--block{
+.caselog-thread--block{
   position: relative;
-  min-height: $ipb-caselog-thread--block--min-height; /* .ipb-caselog-thread--block-medallion height */
+  min-height: $ipb-caselog-thread--block--min-height; /* .caselog-thread--block-medallion height */
   margin-bottom: $ipb-caselog-thread--block--margin-bottom;
 
   &:last-child{
@@ -122,7 +122,7 @@ $messaging-block-entries-margin-x: 60px !default;
 }
 
 
-.ipb-caselog-thread--block-medallion{
+.caselog-thread--block-medallion{
   position: absolute;
   top: 0;
   left: 0;
@@ -138,14 +138,14 @@ $messaging-block-entries-margin-x: 60px !default;
   border-radius: 100%;
 }
 
-.ipb-caselog-thread--block-user{
+.caselog-thread--block-user{
   display: none;
   margin-left: $ipb-caselog-thread--block-user--margin-left;
   
   @extend %common-font-ral-bol-100;
 }
 
-.ipb-caselog-thread--block-entries{
+.caselog-thread--block-entries{
   position: relative;
   display: inline-block;
   margin-left: $ipb-caselog-thread--block-entries--margin-x;
@@ -153,7 +153,7 @@ $messaging-block-entries-margin-x: 60px !default;
   border-radius: $ipb-caselog-thread--block-entries--border-radius;
 }
 
-.ipb-caselog-thread--block-entry{
+.caselog-thread--block-entry{
   position: relative;
   padding: $ipb-caselog-thread--block-entry--padding-y $ipb-caselog-thread--block-entry--padding-x;
 
@@ -164,7 +164,7 @@ $messaging-block-entries-margin-x: 60px !default;
   &.closed{
     cursor: pointer;
 
-    .ipb-caselog-thread--block-entry-content{
+    .caselog-thread--block-entry-content{
       height: $ipb-caselog-thread--block-entry-content--height;
       overflow-y: hidden;
 
@@ -181,7 +181,7 @@ $messaging-block-entries-margin-x: 60px !default;
   }
 }
 
-.ipb-caselog-thread--block-entry-content{
+.caselog-thread--block-entry-content{
   display: block;
   overflow-x: auto;
   overflow-y: hidden;
@@ -196,14 +196,14 @@ $messaging-block-entries-margin-x: 60px !default;
   }
 }
 
-.ipb-caselog-thread--block-entry-date{
+.caselog-thread--block-entry-date{
   margin-top: $ipb-caselog-thread--block-entry-date--margin-top;
   text-align: right;
   transition: all 0.2s linear;
   @extend %common-font-size-100;
 }
 
-.ipb-caselog-thread--block-entry-toggler{
+.caselog-thread--block-entry-toggler{
   position: absolute;
   top: $ipb-caselog-thread--block-entry-toggler--top;
   right: $ipb-caselog-thread--block-entry-toggler--right;
@@ -212,39 +212,39 @@ $messaging-block-entries-margin-x: 60px !default;
   cursor: pointer;
   transition: all 0.2s linear;
 }
-.ipb-caselog-thread--block-entry:not(.closed):hover{
-  .ipb-caselog-thread--block-entry-toggler{
+.caselog-thread--block-entry:not(.closed):hover{
+  .caselog-thread--block-entry-toggler{
     opacity: 1;
   }
 }
 
-.ipb-caselog-thread--block-me{
+.caselog-thread--block-me{
   text-align: right;
 
-  .ipb-caselog-thread--block-medallion{
+  .caselog-thread--block-medallion{
     left: initial;
     right: 0px;
   }
-  .ipb-caselog-thread--block-user{
+  .caselog-thread--block-user{
     display: none;
     margin-left: initial;
     margin-right: $ipb-caselog-thread--block-me--block-user--margin-right;
   }
-  .ipb-caselog-thread--block-entries{
+  .caselog-thread--block-entries{
     margin-left: $ipb-caselog-thread--block-me--block-entries--margin-left;
     margin-right: $ipb-caselog-thread--block-me--block-entries--margin-right;
     text-align: right;
 
-    .ipb-caselog-thread--block-entry{
+    .caselog-thread--block-entry{
       text-align: left;
 
-      .ipb-caselog-thread--block-entry-toggler{
+      .caselog-thread--block-entry-toggler{
         right: initial;
         left: 5px;
       }
     }
-    .ipb-caselog-thread--block-entry:first-child{
-      .ipb-caselog-thread--block-entry-content:before{
+    .caselog-thread--block-entry:first-child{
+      .caselog-thread--block-entry-content:before{
         left: initial;
         right: -15px;
       }
