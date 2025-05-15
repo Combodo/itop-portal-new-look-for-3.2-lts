@@ -157,7 +157,7 @@
                 // Building back button
                 if( $('div[data-level-id="'+nodeId+'"] .mosaic-group-back').length === 0 ) {
                     var backElem = $('<div></div>').addClass('mosaic-group-item').addClass('mosaic-group-back');
-                    var aElem = $('<a></a>').addClass('mosaic-item').addClass('mosaic-rollup').attr('href', '#').attr('data-level-id', upperlevelId).html('<div class="mosaic-item-image"><span class="glyphicon glyphicon-arrow-left"></span></div><div class="mosaic-item-text"><div class="mosaic-item-name">Back back</div></div>');
+					var aElem = $('<a></a>').addClass('mosaic-item').addClass('mosaic-rollup').attr('href', '#').attr('data-level-id', upperlevelId).html('<div class="mosaic-item-image"><span class="glyphicon glyphicon-arrow-left"></span></div><div class="mosaic-item-text"><div class="mosaic-item-name">{{ 'Brick:Portal:Browse:Mosaic:Back'|dict_s }}</div></div>');
 
                     backElem.append(aElem);
                     $('div[data-level-id="' + nodeId + '"]').append(backElem);
