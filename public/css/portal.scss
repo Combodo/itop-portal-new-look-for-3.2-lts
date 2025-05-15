@@ -97,8 +97,8 @@ footer{
 
 	/* Main content */
 	#main-wrapper{
-    flex-grow: 1;
-    overflow: auto;
+		flex-grow: 1;
+		overflow: auto;
 	}
 }
 @media (min-width: 992px){
@@ -594,7 +594,6 @@ table .group-actions a.glyphicon-menu-hamburger{
 	& > .glyphicon{
 		margin-left: 0.5em;
 		font-size: 0.85em;
-		color: $combodo-orange;
 		transition: transform 0.2s linear;
 	}
 	& > .glyphicon.collapsed{
