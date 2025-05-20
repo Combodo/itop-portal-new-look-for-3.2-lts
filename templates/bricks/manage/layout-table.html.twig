@@ -157,9 +157,18 @@
 	                        sort: function (attribute_code, type, row) {
 		                        return row.attributes[attribute_code].sort_value;
 							},
-	                        filter: function (attribute_code, type, row) {
-                        		return $.text($.parseHTML(row.attributes[attribute_code]['value_html']));
-	                        },
+							filter: function (attribute_code, type, row) {
+								// Check if the attribute and value_html exist
+								if (!row.attributes[attribute_code] || !row.attributes[attribute_code]['value_html']) {
+									return '';
+								}
+
+								// Create a temporary div outside the DOM to filter out XSS
+								const tempDiv = document.createElement('div');
+								tempDiv.textContent = row.attributes[attribute_code]['value_html'];
+
+								return tempDiv.textContent;
+							},
 						},
                     });
                 }
