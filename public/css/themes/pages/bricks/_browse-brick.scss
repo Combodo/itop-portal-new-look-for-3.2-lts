@@ -6,7 +6,7 @@
 /* SCSS variables (can be overloaded) */
 @import "../node_modules/bulma-scss/utilities/mixins";
 
-$ipb-browse-brick--mosaic-item--highlight-color:  $ipb-color-blue-800, $ipb-color-orange-800, $ipb-color-green-800, $ipb-color-pink-800, $ipb-color-cyan-800, $ipb-color-yellow-800, $ipb-color-purple-800;
+$ipb-browse-brick--mosaic-item--highlight-color:  $ipb-color-blue-800, $ipb-color-orange-800, $ipb-color-green-800, $ipb-color-pink-800, $ipb-color-cyan-800, $ipb-color-yellow-800, $ipb-color-purple-800 !default;
 
 $ipb-browse-brick--mosaic-breadcrumb--active--color: $ipb-color-grey-800 !default;
 $ipb-browse-brick--mosaic-breadcrumb--a--color: $ipb-color-primary-800 !default;
