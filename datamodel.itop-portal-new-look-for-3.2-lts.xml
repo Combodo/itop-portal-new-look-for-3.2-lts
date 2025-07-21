@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <itop_design xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0">
   <module_designs>
-  <module_design xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="itop-portal" xsi:type="portal" _delta="must_exist">
+      <module_design xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="itop-portal" xsi:type="portal" _delta="if_exists">
   <properties>
       <ui_version>v3</ui_version>
     <templates>
