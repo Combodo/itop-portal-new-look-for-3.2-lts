@@ -18,7 +18,6 @@
 @import 'common/main.scss';
 @import '../../../../itop-portal-new-look-for-3.2-lts/public/css/variables.scss';
 @import "../../../../itop-portal-new-look-for-3.2-lts/public/css/utils/all";
-@import '../node_modules/ckeditor5-itop-build/build/styles/compiled-theme';
 
 /*!
  * Combodo portal template v1.0.0
@@ -540,10 +539,6 @@ table .group-actions a.glyphicon-menu-hamburger{
 /*********/
 /* Forms */
 /*********/
-/* - Ensure HTML contents are displayed like in CKEditor */
-.ipb-is-html-content {
-  @extend .ck-content;
-}
 
 
 /* Note: We don't put the .form_field selector as it must work for read-only */
