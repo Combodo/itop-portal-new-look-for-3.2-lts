@@ -5,7 +5,7 @@ $ipb-vendors-ckeditor--ck-content--text-color: $ipb-color-grey-900 !default;
   --ck-content-font-family: #{$common-font-family-base}, #{$common-font-family-fallbacks};
 }
 
-.ck.ck-content {
+.ck-content {
   color: $ipb-vendors-ckeditor--ck-content--text-color;
 }
 

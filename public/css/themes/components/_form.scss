@@ -51,6 +51,6 @@ $ipb-field--value--color: $ipb-color-grey-900 !default;
   color: $ipb-field--label--color;
 }
 
-.form_field_control {
+.form_field_control, .form_field_control .ipb-is-html-content {
   color: $ipb-field--value--color;
 }
